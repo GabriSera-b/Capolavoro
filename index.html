@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guida alla Costituzione: Referendum e Magistratura</title>
+    <style>
+        :root {
+            --primary-color: #2c502e;
+            --secondary-color: #2bb82b;
+            --accent-color: #e74c3c;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            scroll-behavior: smooth;
+        }
+
+        /* Menu di Navigazione */
+        nav {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .container {
+            max-width: 70%;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            height: 80%;
+            background-image: url('https://dirittopenaleuomo.org/wp-content/uploads/2021/03/justitia-2597016_1920.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Oscurisce leggermente l'immagine per leggere meglio il testo */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        /* Testo sopra l'immagine */
+        .hero-overlay {
+            position: relative;
+            color: white;
+            text-align: center;
+            z-index: 1;
+            padding: 20px;
+        }
+
+        .hero-overlay h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-overlay p {
+            font-size: 1.2rem;
+        }
+
+        section {
+            background: var(--white);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--secondary-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 15px;
+            margin-top: 30px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+            align-items: stretch;
+        }
+
+        .grid-horizontal{
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .card {
+            background: #f1f8ff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #d1e9ff;
+            margin: 10px;
+        }
+
+        .sub-card {
+            background: #ffffff;
+            border: 1px solid #dfe6e9;
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .image-title-box {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .image-title-box img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* overlay scuro per leggibilità */
+        .image-title-box::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(0,0,0,0.2),
+                rgba(0,0,0,0.7)
+            );
+        }
+
+        /* titolo sopra immagine */
+        .image-title-box h3 {
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+            margin: 0;
+            color: white;
+            font-size: 1.4rem;
+            z-index: 2;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .tag-abrogativo { background: #d1ecf1; color: #0c5460; }
+        .tag-costituzionale { background: #d4edda; color: #155724; }
+        .tag-consultivo { background: #fff3cd; color: #856404; }
+
+        .note-box {
+            background-color: #fff4f4;
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        #riforma ul li {
+            margin-bottom: 14px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            nav ul { flex-direction: column; align-items: center; }
+            nav ul li { margin: 5px 0; }
+            section { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-overlay">
+            <h1>Referendum sulla giustizia</h1>
+            <p>Di Serafino Gabriella 5AI</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#referendum">Referendum</a></li>
+            <li><a href="#magistratura">Magistratura</a></li>
+            <li><a href="#csm">Il CSM</a></li>
+            <li><a href="#poteri">Separazione Poteri</a></li>
+            <li><a href="#riforma">Riforma Giustizia</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Sezione 1: Referendum -->
+        <section id="referendum">
+        <h2>📌 1. Il Referendum</h2>
+
+        <div class="image-title-box">
+            <img src="https://dhamzv23wqk2g.cloudfront.net/wp-content/uploads/2025/06/10145549/Referendum-lavoro-.jpg">
+            <h3>🔎 Cos’è un referendum</h3>
+        </div>
+        <p>
+            Il referendum è lo strumento principale di <strong>democrazia diretta</strong>. 
+            Consiste in una votazione in cui il corpo elettorale è chiamato a pronunciarsi direttamente 
+            su una specifica questione, una legge o una scelta politica, senza l’intermediazione 
+            dei rappresentanti parlamentari.
+        </p>
+        <p>
+            È importante ricordare che il referendum non sempre ha valore vincolante (dipende dal tipo), 
+            ma in molte circostanze il risultato della votazione ha effetti giuridici concreti.
+        </p>
+
+        <h3>Dove è previsto nella Costituzione della Repubblica Italiana</h3>
+
+        <div class="grid">
+            <div class="card">
+                <span class="tag tag-abrogativo">Art. 75 Cost.</span>
+                <p>Riguarda il <strong>referendum abrogativo</strong>.</p>
+            </div>
+
+            <div class="card">
+                <span class="tag tag-costituzionale">Art. 138 Cost.</span>
+                <p>Riguarda il <strong>referendum costituzionale o confermativo</strong>.</p>
+            </div>
+        </div>
+
+        <p>
+            Questi articoli forniscono il fondamento costituzionale per l’uso del referendum 
+            come strumento di democrazia diretta.
+        </p>
+
+        <p>
+            In generale, l’ordinamento italiano prevede anche forme di referendum 
+            a livello regionale e locale, tipicamente nei regolamenti e statuti regionali o comunali.
+        </p>
+
+        <h3>Differenza tra democrazia diretta e rappresentativa</h3>
+
+        <div class="grid">
+            <div class="card">
+                <h4>Democrazia rappresentativa</h4>
+                <p>
+                    I cittadini eleggono i propri rappresentanti (deputati e senatori) affinché 
+                    prendano decisioni e approvino leggi a loro nome.
+                </p>
+            </div>
+
+            <div class="card">
+                <h4>Democrazia diretta</h4>
+                <p>
+                    I cittadini esercitano il potere sovrano in prima persona, 
+                    approvando o rigettando un testo legislativo. 
+                    In Italia, il referendum ha una funzione prevalentemente negativa 
+                    (togliere una legge esistente) o di garanzia 
+                    (confermare una modifica alla Costituzione).
+                </p>
+            </div>
+        </div>
+
+        <div class="note-box">
+            <strong>Sistema italiano:</strong> è un sistema misto. 
+            Prevale la democrazia rappresentativa (Parlamento, Governo, ecc.), 
+            ma esistono strumenti di democrazia diretta come il referendum.
+        </div>
+
+        <!-- Sezione B: Tipi di Referendum -->
+        <div class="image-title-box">
+            <img src="https://www.interno.gov.it/sites/default/files/2022-05/schede-referendum-885-400.jpg">
+            <h3>🔎 Tipi di referendum in Italia</h3>
+        </div>
+
+        <p>In Italia esistono principalmente tre tipi di referendum:</p>
+
+        <div class="grid">
+
+            <!-- REFERENDUM ABROGATIVO -->
+            <div class="card">
+                <span class="tag tag-abrogativo">Art. 75 Cost.</span>
+                <h3>🟦 Referendum Abrogativo</h3>
+
+                <p>
+                    È la forma di referendum più conosciuta ed è prevista per abolire o abrogare totalmente o in parte una legge. 
+                </p>
+
+                <h4>Chi può richiederlo</h4>
+                <ul>
+                    <li>500.000 elettori (cittadini che devono firmare una proposta di referendum)</li>
+                    <li>5 Consigli regionali</li>
+                </ul>
+                <p>
+                    I cittadini raccolgono le firme necessarie oppure i Consigli regionali presentano la richiesta. 
+                </p>
+
+                <h4>Ruolo Corte Costituzionale</h4>
+                <p>La Corte Costituzionale ha un ruolo chiave: </p>
+                <ul>
+                    <li>Verifica la regolarità delle firme</li>
+                    <li>
+                        Controlla l’ammissibilità della proposta di referendum, cioè:
+                        <ul>
+                            <li>che il testo sia conforme alla Costituzione;</li>
+                            <li>che non riguardi materie escluse dal referendum;</li>
+                            <li>che non sia strumentale o in contrasto con altri principi costituzionali.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>Solo se la Corte dichiara il referendum ammissibile si può procedere.</p>
+
+                <h4>Quorum</h4>
+                <p>Perché il referendum abrogativo sia valido è richiesto il quorum: devono votare almeno la maggioranza degli aventi diritto al voto. </p>
+                <p>Se la partecipazione è inferiore al 50% +1, il risultato non è valido anche se la maggioranza dei votanti ha votato “sì”. </p>
+
+                <h4>Effetti del voto</h4>
+                <p>Se vince il “sì” con quorum valido, la legge viene abrogata.</p>
+            </div>
+
+            <!-- REFERENDUM COSTITUZIONALE -->
+            <div class="card">
+                <span class="tag tag-costituzionale">Art. 138 Cost.</span>
+                <h3>🟩 Referendum Costituzionale</h3>
+
+                <p>
+                    Questo referendum si indice in caso di modifiche alla Costituzione o alle leggi costituzionali. 
+                </p>
+
+                <p>
+                    È diverso dall’abrogativo perché non elimina una legge, ma conferma una modifica costituzionale approvata dal Parlamento.
+                </p>
+
+                <h4>Chi può richiederlo</h4>
+                <p>
+                    Il referendum costituzionale può essere richiesto da: 
+                </p>
+                <ul>
+                    <li>5 Consigli regionali</li>
+                    <li>1/5 dei membri di una Camera del Parlamento</li>
+                </ul>
+                <p>
+                    Non possono chiederlo i singoli cittadini attraverso le firme. 
+                </p>
+
+                <h4>Ruolo Corte Costituzionale</h4>
+                <p>Anche qui la Corte Costituzionale verifica l'ammissibilità formale del referendum, ma non entra nel merito dei contenuti politici, limitandosi ad accertare che l'iter burocratico sia stato rispettato.</p>
+
+                <h4>Quorum</h4>
+                <p>Per questo tipo di referendum non è previsto il quorum. Il risultato è valido qualsiasi sia l’affluenza. </p>
+
+                <h4>Effetti del voto</h4>
+                <p>
+                    Se prevalgono i «sì», la riforma viene confermata ed entra definitivamente in vigore; in caso di prevalenza dei «no», la modifica decade e il testo costituzionale resta invariato.
+                </p>
+            </div>
+
+            <!-- REFERENDUM CONSULTIVO -->
+            <div class="card">
+                <span class="tag tag-consultivo">Art. 123 Cost.</span>
+                <h3>🟨 Referendum Consultivo</h3>
+
+                <p>
+                    Previsto dagli Statuti regionali o dai regolamenti comunali, non ha valore vincolante "de iure" (per legge), ma ha un forte peso politico. E' implementato per saggiare l'orientamento della popolazione su temi locali (es. distacchi territoriali, grandi opere).
+                </p>
+
+                <h4>Livello</h4>
+                <p>
+                    Si svolge soprattutto a livello:
+                </p>
+                <ul>
+                    <li>Regionale</li>
+                    <li>Provinciale</li>
+                    <li>Comunale</li>
+                </ul>
+
+                <h4>Chi può richiederlo</h4>
+                <p>Dipende dallo statuto/regolamento della regione o ente locale, ma di solito: </p>
+                <ul>
+                    <li>una certa percentuale di cittadini elettori,</li>
+                    <li>o un numero di consiglieri possono promuoverlo. </li>
+                </ul>
+
+                <h4>Numero di firme necessarie </h4>
+                <p>Varia da regione a regione o da comune a comune, secondo le regole dello statuto. </p>
+
+                <h4>Ruolo della Corte Costituzionale </h4>
+                <p>In genere non c’è il controllo della Corte Costituzionale, perché il referendum consultivo non modifica direttamente norme statali o costituzionali. </p>
+
+                <h4>Quorum</h4>
+                <p>Dipende dalle regole locali; spesso non è previsto quorum, oppure è stabilito nello statuto.</p>
+
+                <h4>Effetti del voto</h4>
+                <p>Non vincolanti: servono come orientamento politico per chi governa, ma non impongono obblighi giuridici.</p>
+            </div>
+
+    </div>
+
+    <div class="note-box">
+        <strong>Materie escluse dal referendum abrogativo:</strong>
+        leggi tributarie, di bilancio, amnistia, indulto e ratifica di trattati internazionali.
+    </div>
+
+    <div class="image-title-box">
+        <img src="https://bum.comunesbt.it/wp-content/uploads/2022/03/elezioni-election-day-urna-voto-votazioni.png">
+        <h3>🔎 Procedura del referendum abrogativo</h3>
+    </div>
+    <p>Vediamo come si svolge passo per passo:</p>
+
+    <div class="grid-horizontal">
+
+        <div class="card">
+            <h4>1️⃣ Raccolta firme</h4>
+            <p>
+                Un comitato promotore deposita il quesito in Cassazione. Si hanno 3 mesi per raccogliere 500.000 firme (oggi possibile anche tramite firma digitale con SPID/CIE). 
+                Per richiedere un referendum abrogativo è necessario: 
+            </p>
+            <ul>
+                <li>Raccogliere 500.000 firme di elettori, oppure</li>
+                <li>Ottenere la richiesta da 5 Consigli regionali.</li>
+            </ul>
+            <p>Le firme devono essere raccolte su moduli ufficiali e consegnate alle autorità competenti.</p>
+        </div>
+
+        <div class="card">
+            <h4>2️⃣ Controllo di Legittimità della Corte Costituzionale</h4>
+            <p>
+                L'Ufficio centrale per il referendum presso la Corte di Cassazione verifica la regolarità delle firme e che la legge oggetto del quesito sia ancora in vigore.
+                Una volta consegnate le firme, la Corte Costituzionale verifica:
+            </p>
+            <ul>
+                <li>Che il numero di firme sia corretto</li>
+                <li>Che non ci siano irregolarità</li>
+                <li>Che l’oggetto del referendum sia ammissibile (non riguardi materie escluse)</li>
+                <li>Giudizio di Ammissibilità: la Corte valuta se il quesito rispetta i limiti dell'art. 75 e se è formulato in modo chiaro, univoco e non manipolatorio.</li>
+            </ul>
+            <p>Se la Corte dichiara il referendum non ammissibile, la procedura si ferma.</p>
+        </div>
+
+        <div class="card">
+            <h4>3️⃣ Indizione del Presidente della Repubblica</h4>
+            <p>Se la Corte dichiara il referendum ammissibile:</p>
+            <ul>
+                <li>Il Presidente della Repubblica indice il referendum</li>
+                <li>Fissa la data della votazione (di solito domenica e lunedì, tra il 15 aprile e il 15 giugno, per dare più tempo agli elettori di votare)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>4️⃣ Validità del risultato</h4>
+            <p>
+                La decisione è valida solo se nel caso dell’abrogativo è raggiunto il quorum del 50%+1 degli aventi diritto al voto. 
+                Se il quorum non è raggiunto: il risultato non è valido e la legge non viene modificata. 
+                Se il quorum è raggiunto e vincono i “sì”, la legge o parte di essa viene abrogata.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Sezione D: Limiti del Referendum -->
+        <div class="image-title-box">
+            <img src="https://www.cashflow.it/wp-content/uploads/2020/10/dollars-money-bag-and-government-building-business-and-finance-concept-1.jpg">
+            <h3>🔎 Limiti del referendum</h3>
+        </div>
+        <p>
+            La Costituzione stabilisce che non è possibile votare per l'abrogazione di determinate categorie di leggi/materie, per evitare che scelte tecniche o impegni internazionali siano travolti dall'emotività popolare (per proteggere alcune funzioni fondamentali dello Stato).
+            Le materie escluse dal referendum abrogativo includono:
+        </p>
+
+        <div class="grid">
+            <div class="card">
+                <p>❌ <strong>Leggi tributarie:</strong> non si possono cancellare le tasse via referendum per non mandare in dissesto il bilancio dello Stato.</p>
+            </div>
+            <div class="card">
+                <p>❌ <strong>Leggi di bilancio:</strong> non è possibile abrogare con referendum norme che toccano il bilancio statale. Le decisioni sulla spesa pubblica e la programmazione economica sono riservate al Parlamento.</p>
+            </div>
+            <div class="card">
+                <p>❌ <strong>Amnistia e indulto:</strong> non possono essere sottoposti a referendum i provvedimenti di clemenza penale che richiedono maggioranze parlamentari molto alte. </p>
+            </div>
+            <div class="card">
+                <p>❌ <strong>Ratifica dei trattati internazionali:</strong> per evitare che l'Italia venga meno a impegni presi con altri Stati o organizzazioni (es. UE o NATO).</p>
+            </div>
+        </div>
+</section>
+
+    <!-- Sezione 2: Magistratura -->
+    <section id="magistratura">
+        <h2>📌 2. MAGISTRATURA</h2>
+        <p>📖 <strong>Riferimento:</strong> Titolo IV della Costituzione</p>
+        <p>
+            Il Titolo IV disciplina l’ordine giudiziario e stabilisce i principi fondamentali che garantiscono l’indipendenza della giustizia in Italia. La magistratura rappresenta uno dei pilastri dello Stato di diritto: senza giudici indipendenti non esisterebbe una reale tutela dei diritti. 
+        </p>
+
+        
+        <div class="image-title-box">
+            <img src="https://www.centrostudilivatino.it/wp-content/uploads/2021/03/magistratura.jpg">
+            <h3>🔎 Principi fondamentali</h3>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h4>⚖️ 1. Magistratura come ordine autonomo e indipendente</h4>
+                <p>
+                    La Costituzione garantisce che il potere giudiziario sia separato dagli altri poteri dello Stato (Legislativo ed Esecutivo) per assicurare l'imparzialità.
+                    L’art. 104 stabilisce che <strong>la magistratura sia un ordine autonomo e indipendente da ogni altro potere.</strong>
+                    Questo significa che:
+                </p>
+                <ul>
+                    <li>Non dipende dal <strong>potere legislativo </strong>(Parlamento).</li>
+                    <li>Non dipende dal <strong>potere esecutivo </strong>(Governo).</li>
+                    <li>Non può subire pressioni politiche.</li>
+                </ul>
+                <p>
+                    L’organo di autogoverno che garantisce questa indipendenza è il <strong>Consiglio Superiore della Magistratura (CSM)</strong>, che gestisce assunzioni, trasferimenti e sanzioni disciplinari dei magistrati, sottraendoli al controllo politico. 
+                </p>
+                <p>
+                    L’indipendenza della magistratura è essenziale per garantire che le decisioni dei giudici siano prese solo in base alla legge (art. 101: “I giudici sono soggetti soltanto alla legge”). 
+                </p>
+            </div>
+
+            <div class="card">
+                <h4>🔒 2. Inamovibilità dei magistrati (Art. 107)</h4>
+                <p>
+                    I magistrati non possono essere dispensati, sospesi dal servizio né destinati ad altre sedi o funzioni se non per decisione del CSM, adottata o per i motivi e con le garanzie di difesa stabilite dall'ordinamento giudiziario o con il loro consenso.
+                    Per tale motivo, l’art. 107 della Costituzione prevede che i magistrati siano <strong>inamovibili</strong>. 
+                <p>
+                    Questo principio protegge il giudice da eventuali ritorsioni e garantisce la sua imparzialità. 
+                </p>
+            </div>
+
+            <div class="card">
+                <h4>⚖️ 3. Obbligatorietà dell’azione penale (Art. 112)</h4>
+                <p>
+                    Il Pubblico Ministero ha l’obbligo di avviare le indagini e procedere quando riceve una notizia di reato. Non è il magistrato a scegliere chi perseguire, ma è la legge stessa a imporlo.
+                </p>
+                <p>
+                    Questo principio garantisce:
+                </p>
+                <ul>
+                    <li>Uguaglianza dei cittadini davanti alla legge.</li>
+                    <li>Evita discriminazioni o favoritismi.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="image-title-box">
+            <img src="https://www.almablog.it/wp-content/uploads/2023/02/scelta.jpg">
+            <h3>🔎 Magistratura requirente e giudicante</h3>
+        </div>
+        <p>All’interno della magistratura distinguiamo due funzioni principali. In Italia, entrambi i ruoli appartengono allo stesso corpo (la magistratura ordinaria), ma svolgono compiti radicalmente diversi nel processo.</p>
+        <div class="grid">
+            <div class="card">
+                <h4>🟦 Magistratura requirente → Pubblico Ministero</h4>
+                <p>
+                    Il <strong>Pubblico Ministero (PM)</strong> è il magistrato che rappresenta l’accusa nei processi penali e rappresenta l'interesse dello Stato alla repressione dei reati.
+                    Funzioni del PM:
+                </p>
+                <ul>
+                    <li>Riceve le notizie di reato</li>
+                    <li>Dirige le indagini preliminari (con la polizia giudiziaria e la coordina)</li>
+                    <li>Decide su archiviazione o rinvio a giudizio</li>
+                    <li>Sostiene l’accusa nel processo, se ci sono prove sufficienti (chiede la condanna).</li>
+                </ul>
+                <p>Il PM non difende interessi privati, ma tutela l’interesse pubblico alla repressione dei reati. Non "giudica", ma "chiede" (richiede) al giudice l'applicazione della legge.</p>
+            </div>
+
+            <div class="card">
+                <h4>🟩 Magistratura giudicante → Giudice</h4>
+                <p>
+                    Il <strong>giudice </strong>è il magistrato, soggetto terzo e imparziale, che decide la controversia o la colpevolezza.
+                    Funzioni del giudice:
+                </p>
+                <ul>
+                    <li>Esamina le prove prodotte dalle parti (accusa e difesa o attore e convenuto)</li>
+                    <li>Interpreta e applica la legge</li>
+                    <li>Pronuncia la sentenza</li>
+                </ul>
+                <p>Il giudice deve essere imparziale e terzo, cioè non deve favorire né accusa né difesa. Agisce come arbitro della contesa, garantendo il rispetto delle regole processuali.</p>
+            </div>
+        </div>
+
+        <div class="note-box">
+            <p>Anche se PM e giudice hanno funzioni diverse, entrambi appartengono allo stesso ordine giudiziario, sono magistrati e godono delle stesse garanzie di indipendenza. La differenza è funzionale, non gerarchica.</p>
+        </div>
+
+        <div class="image-title-box">
+            <img src="https://traileoni.it/wp-content/uploads/2025/05/thumbnail_PHOTO-2025-05-02-07-07-01.jpg">
+            <h3>🔎 Tipi di giurisdizione</h3>
+        </div>
+        <p>
+            La giurisdizione è il potere di applicare la legge per risolvere controversie. In Italia esistono diverse giurisdizioni. 
+        </p>
+        <div class="grid">
+            <div class="card">
+                <h4>⚖️ Giurisdizione civile</h4>
+                <p>Controversie tra privati: contratti, famiglia, proprietà, risarcimento danni.<br>Esempio: una lite per un affitto non pagato. 
+                </p>
+            </div>
+            <div class="card">
+                <h4>⚖️ Giurisdizione penale</h4>
+                <p>Accertamento dei reati e applicazione delle sanzioni (multe o reclusione). L’azione si apre tramite il PM.<br>Esempio: furto, truffa, aggressione.</p>
+            </div>
+            <div class="card">
+                <h4>⚖️ Giurisdizione amministrativa</h4>
+                <p>
+                    Riguarda controversie tra cittadini e Pubblica Amministrazione. Tutela degli interessi legittimi dei cittadini contro gli atti della Pubblica Amministrazione (TAR e Consiglio di Stato).
+                    Il giudice amministrativo controlla la legittimità degli atti amministrativi. 
+                    Organi principali: TAR (Tribunale Amministrativo Regionale) e Consiglio di Stato;
+                </p>
+            </div>
+            <div class="card">
+                <h4>⚖️ Giurisdizione contabile</h4>
+                <p>
+                    È esercitata dalla Corte dei conti.
+                    Si occupa di: responsabilità contabile di funzionari pubblici e controllo sulla gestione delle finanze pubbliche. 
+                </p>
+            </div>
+            <div class="card">
+                <h4>⚖️ Giurisdizione tributaria</h4>
+                <p>
+                    Riguarda controversie in materia di tasse e tributi. Dispute tra contribuenti e Fisco (Commissioni Tributarie). 
+                    Si svolge davanti alle Corti di giustizia tributaria. 
+                </p>
+            </div>
+        </div>
+
+        <div class="image-title-box">
+            <img src="https://ca-lecce.giustizia.it/cmsresources/cms/images/DSC00615-scaled_d0.jpg">
+            <h3>🔎 Gradi di giudizio</h3>
+        </div>
+        <div>
+            <p>
+                In Italia vale il principio del <strong>doppio grado di giudizio</strong> , con possibilità di ricorso ulteriore. 
+                
+                Il sistema italiano prevede generalmente tre gradi di giudizio per ridurre il rischio di errori giudiziari. 
+                
+                Nei primi due, i magistrati sono Giudici di Merito: esaminano i fatti, ascoltano i testimoni e valutano le prove. 
+            </p>
+            <ul>
+                <li>1️⃣ <strong>Primo grado</strong>: si svolge davanti al tribunale competente. Tribunale o Giudice di Pace;</li>
+                <li>2️⃣ <strong>Secondo grado (Appello)</strong>: la parte insoddisfatta può impugnare la sentenza. Alla Corte d'Appello si può richiedere un nuovo esame dei fatti se si ritiene la prima sentenza ingiusta.</li>
+                <li>3️⃣ <strong>Terzo grado</strong>: la Corte Suprema di Cassazione è il giudice di legittimità.</li>
+            </ul>
+        </div>
+        
+        <div class="image-title-box">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Roma_2011_08_07_Palazzo_di_Giustizia.jpg">
+            <h3>🔎 Funzione della Corte di Cassazione</h3>
+        </div>
+        <div>
+            <p>
+                La <strong>Corte di Cassazione</strong> è l'organo supremo della giustizia. A differenza dei precedenti, è un Giudice di Legittimità.
+            </p>
+            <ul>
+                <li><strong>Cosa fa</strong>: non riesamina le prove (non decide se l'imputato è "colpevole" in base ai fatti), ma verifica solo che la legge sia stata applicata correttamente e che il processo si sia svolto in modo regolare.</li>
+                <li><strong>Funzione Nomofilattica</strong>: ha il compito di garantire l'uniforme interpretazione della legge su tutto il territorio nazionale. Se la Cassazione annulla una sentenza, questa torna spesso in Appello per essere ridiscussa secondo i principi dettati dalla Cassazione stessa.</li>
+            </ul>
+            <p>
+                Se trova un errore di diritto, può: annullare la sentenza, rinviare il processo a un altro giudice.
+            </p>
+        </div>
+        
+        <div class="image-title-box">
+            <img src="https://www.termometropolitico.it/newmedia/2019/12/Pignoramento-presso-terzi-nuovi-limiti-2020-pensione-conto-corrente-stipendio.jpg">
+            <h3>🔎 Differenza tra giudice di merito e giudice di legittimità</h3>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h4>🟢 Giudice di merito</h4>
+                <ul>
+                    <li>Valuta i fatti</li>
+                    <li>Analizza le prove</li>
+                    <li>Decide nel merito della controversia</li>
+                    <li>Esempio: Tribunale, Corte d’Appello</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4>🔵 Giudice di legittimità</h4>
+                <ul>
+                    <li>Non rivede i fatti</li>
+                    <li>Controlla solo il rispetto della legge</li>
+                    <li>Esempio: Corte di Cassazione</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    </section>
+
+        <!-- Sezione 3: CSM -->
+    <section id="csm">
+        <h2>📌 3. CSM – Consiglio Superiore della Magistratura</h2>
+        <p>
+            Il <strong>Consiglio Superiore della Magistratura (CSM)</strong> è il perno su cui ruota l'indipendenza del potere giudiziario in Italia.
+        </p>
+        <p>📖 <strong>Riferimento:</strong> art. 104 Cost.</p>
+        <p>
+            L’articolo 104 stabilisce: 
+            <em>“La magistratura costituisce un ordine autonomo e indipendente da ogni altro potere.”</em> 
+            Per rendere concreta questa autonomia, la Costituzione ha previsto un organo specifico: il Consiglio Superiore della Magistratura (CSM).
+        </p>
+        <p>
+            Il CSM è quindi lo strumento attraverso cui si realizza l’autogoverno della magistratura, evitando interferenze del potere politico nelle carriere dei magistrati.
+        </p>
+
+        <div class="image-title-box">
+            <img src="https://www.avvenire.it/_ipx/s_1536x864/https://avv-naxos-prod-cdn.azureedge.net/avvenire/stories/2025/11/16/1920x1080/9854da67-a1fd-4e94-b9f4-35ba4091fa05.jpeg">
+            <h3>🔎 Cos’è il CSM</h3>
+        </div>
+        <p>
+            Il CSM non è un "Ministero", ma l'organo di autogoverno della magistratura ordinaria. La sua funzione principale è garantire l'autonomia e l'indipendenza della magistratura da ogni altro potere, specialmente da quello esecutivo (il Governo) e serve a evitare che le carriere dei giudici siano influenzate dalla politica.
+        </p>
+        <p>
+            Il CSM non è un tribunale e non giudica processi. 
+            Si occupa invece di: 
+        </p>
+        <ul>
+            <li>Gestire la carriera dei magistrati.</li>
+        </ul>
+
+        <div class="image-title-box">
+            <img src="https://storage.ecodibergamo.it/media/photologue/2025/6/7/photos/mattarella-lo-stile-a-difesa-delle-regole_3b6cb12e-437a-11f0-8465-dffc8d7a803a_1920_1080.webp">
+            <h3>🔎 Composizione del CSM</h3>
+        </div>
+        <p>
+            La composizione del CSM è pensata per garantire un equilibrio tra magistrati e rappresentanti eletti dal Parlamento. La composizione è "mista" per evitare che la magistratura diventi una casta chiusa e autoreferenziale.
+        </p>
+        <div class="grid-horizontal">
+            <div class="card">
+                <h4>👑 1. Presidente</h4>
+                <p>Il Presidente del CSM è il <strong>Presidente della Repubblica</strong>. La sua presenza è formale e simbolica e garantisce un ruolo super partes e collegamento istituzionale.</p>
+            </div>
+            <div class="card">
+                <h4>📌 2. Membri di diritto</h4>
+                <p>
+                    Fanno parte automaticamente: il <strong>Presidente della Repubblica, il Primo Presidente della Corte di Cassazione e il Procuratore Generale della Cassazione</strong>.
+                    Sono membri “di diritto” perché ricoprono ruoli apicali nella magistratura.
+                </p>
+            </div>
+            <div class="card">
+                <h4>👨‍⚖️ 3. Membri elettivi (attualmente 30, a seguito della Riforma Cartabia del 2022)</h4>
+                <p>
+                    Il CSM è composto anche da membri eletti, suddivisi in due categorie:
+                </p>
+                <ul>
+                    <li>🟦 <strong>Membri togati (2/3 → 20 magistrati eletti dai colleghi)</strong>: sono eletti dai magistrati ordinari e rappresentano la componente interna della magistratura. </li>
+                    <li>🟨 <strong>Membri laici (1/3 → 10 eletti dal Parlamento, professori o avvocati con min. 15 anni di esperienza)</strong>: sono eletti dal Parlamento in seduta comune</li>
+                </ul>
+                <p>
+                    La presenza dei membri laici serve a garantire un collegamento con la rappresentanza democratica.
+                </p>
+            </div>
+            <div class="card">
+                <h4>️4. Vicepresidente</h4>
+                <p>Viene eletto dal Consiglio tra i membri laici. È lui che esercita concretamente le funzioni di guida, poiché il Capo dello Stato presiede solo raramente le sedute ordinarie.</p>
+            </div>
+            <div class="card">
+                <h4>⏳ Durata in carica</h4>
+                <p>
+                    I membri del CSM restano in carica <strong>4 anni</strong> e non sono immediatamente rieleggibili. Questo evita la formazione di posizioni di potere troppo durature.
+                </p>
+                <div class="sub-card">
+                    <h4>A chi si applica nello specifico?</h4>
+                    <p>
+                        Questa regola interessa i componenti che vengono scelti tramite votazione, ovvero:  
+                    </p>
+                    <ul>
+                        <li><strong>Membri Togati</strong></li>
+                        <li><strong>Membri Laici</strong></li>
+                    </ul>
+                </div>
+                <div class="sub-card">
+                    <h4>A chi NON si applica: </h4>
+                    <p>
+                        La norma non riguarda i membri di diritto (Presidente della Repubblica, Primo Presidente e Procuratore Generale della Cassazione), la cui presenza nel CSM è legata intrinsecamente alla carica che ricoprono.  
+                    </p> 
+                </div>
+                <div class="sub-card">
+                    <h4>Perché esiste questa regola?</h4>
+                    <p>
+                        Il legislatore costituente ha previsto il divieto di rielezione immediata per due motivi principali:   
+                    </p> 
+                    <ul>
+                        <li><strong>Indipendenza</strong> evitare che un membro, durante il mandato, agisca in modo da compiacere i propri elettori (colleghi magistrati o forze politiche) per ottenere la conferma.</li>
+                        <li><strong>Ricambio</strong>: garantire una rotazione periodica che impedisca la formazione di centri di potere permanenti all'interno dell'organo di autogoverno.</li>
+                    </ul>
+                    <p>È importante notare che il divieto è solo per la rielezione "immediata": tecnicamente, una persona potrebbe essere rieletta dopo che sia trascorso almeno un intero mandato (4 anni) dalla fine del precedente.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="image-title-box">
+            <img src="https://static.vecteezy.com/ti/vettori-gratis/p1/10594379-strategia-di-crescita-percorso-di-carriera-sviluppo-o-crescita-azienda-dipendente-formazione-o-miglioramento-concetto-di-promozione-di-lavoro-uomo-d-affari-persone-dipendenti-in-corsa-per-corso-di-carriera-freccia-in-ascesa-verso-l-alto-vettoriale.jpg">
+            <h3>🔎 Compiti del CSM</h3>
+        </div>
+        <p>
+            Il CSM esercita funzioni fondamentali per la vita della magistratura.
+            Secondo l'art. 105 della Costituzione, il CSM si occupa di tutto ciò che riguarda la carriera dei magistrati ("status"):
+        </p>
+        <div class="grid">
+            <div class="card">
+                <h4>📌 1. Assunzioni</h4>
+                <p>Gestione dei concorsi pubblici per diventare magistrato. Si occupa della nomina dei magistrati vincitori di concorso e decide l’ingresso nell’ordine giudiziario.</p>
+            </div>
+            <div class="card">
+                <h4>📌 2. Assegnazioni e Trasferimenti</h4>
+                <p>Decisioni su dove un magistrato debba lavorare e con quali funzioni. Stabilisce eventuali trasferimenti da una sede all’altra e garantisce che non avvengano per motivi politici. </p>
+            </div>
+            <div class="card">
+                <h4>📌 3. Promozioni</h4>
+                <p>Valutazione della professionalità e merito, e avanzamento di carriera dei magistrati.</p>
+            </div>
+            <div class="card">
+                <h4>📌 4. Provvedimenti disciplinari</h4>
+                <p>
+                    È l'unico organo che può sanzionare un magistrato (dalla censura alla rimozione) se commette illeciti nell'esercizio delle funzioni o fuori dal servizio.
+                    Può avviare procedimenti disciplinari contro magistrati che violano i loro doveri e irrogare sanzioni (richiamo, sospensione, ecc.).
+                    Questi poteri sono fondamentali per garantire: indipendenza, responsabilità, corretto funzionamento della giustizia. 
+                </p>
+            </div>
+        </div>
+
+        <div class="image-title-box">
+            <img src="https://lastatalenews.unimi.it/sites/default/files/styles/paragraph_image/public/image/cover/justice-2060093_1920.jpg?h=e5aec6c8&itok=SBVf8Wj1">
+            <h3>🔎 Le “correnti” nella magistratura</h3>
+        </div>
+        <p>
+            Uno degli aspetti più discussi del CSM riguarda il sistema delle cosiddette “correnti”.
+        </p>
+        <div class="grid">
+            <div class="card">
+                <h4>📌 Cosa sono le correnti?</h4>
+                <p>
+                    Le correnti sono gruppi associativi interni all'Associazione Nazionale Magistrati (ANM) organizzati attorno a orientamenti culturali, giuridici o ideologici (es. Magistratura Democratica, Magistratura Indipendente, Unicost).
+                </p>
+                <ul>
+                    <li>Funzionano da “partiti” nella elezione dei membri togati</li>
+                    <li>Criticate per logiche di spartizione e politicizzazione</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4>📌 Perché esistono?</h4>
+                <p>
+                    In teoria, servono a rappresentare diverse sensibilità culturali e visioni del diritto all'interno del CSM. Poiché i membri togati vengono eletti, le correnti fungono da "partiti" che presentano candidati e programmi.
+                    Esistono perché:
+                </p>
+                <ul>
+                    <li>I magistrati eleggono i membri togati del CSM. </li>
+                    <li>Come in ogni sistema elettivo, si formano gruppi organizzati.</li>
+                    <li>Servono a rappresentare diverse sensibilità culturali.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4>📌 Critiche al sistema correntizio </h4>
+                <p>
+                    Nel tempo sono emerse forti critiche:
+                </p>
+                <ul>
+                    <li>Rischio di “spartizione” degli incarichi.</li>
+                    <li>Logiche di appartenenza più che di merito.</li>
+                    <li>Eccessiva politicizzazione della magistratura.</li>
+                </ul>
+                <p>
+                    Molti sostengono che il sistema delle correnti possa compromettere: l’immagine di imparzialità e la fiducia dei cittadini nella giustizia. 
+                </p>
+            </div>
+            <div class="card">
+                <h4>📌 Scandali e richieste di riforma </h4>
+                <p>
+                    Negli ultimi anni alcuni scandali hanno coinvolto membri del CSM e magistrati di alto livello, portando a: Dimissioni, Procedimenti disciplinari, Dibattiti politici sulla riforma del CSM. 
+                </p>
+                <p>
+                    Il sistema è finito sotto accusa per la degenerazione correntizia: 
+                </p>
+                <ul>
+                    <li>Logica spartitoria: Le correnti sono state accusate di spartirsi le nomine degli uffici direttivi (es. chi diventa Procuratore Capo in una città) non in base al merito, ma in base all'appartenenza al gruppo.</li>
+                    <li>Il "Caso Palamara" (2019): Lo scandalo scoppiato con le intercettazioni dell'ex magistrato Luca Palamara ha rivelato accordi sottobanco tra magistrati e politici per influenzare le nomine del CSM. Questo evento ha scosso profondamente la fiducia dei cittadini nella giustizia.</li>
+                </ul>
+                <p>
+                    Questi sviluppi hanno determinato riforme legislative del sistema elettorale del CSM, proposte mirate a ridurre il peso delle correnti e un acceso dibattito sulla separazione delle carriere tra magistratura requirente e giudicante. 
+                </p> 
+            </div>
+            <div class="card">
+                <h4>📝Riforma Cartabia (2022) </h4>
+                <p>
+                    Per contrastare il potere delle correnti, la recente riforma ha: 
+                </p>
+                <ul>
+                    <li>Modificato il sistema elettorale per rendere più difficile il controllo dei voti da parte dei gruppi associati. </li>
+                    <li>Introdotto il divieto di "porte girevoli" (passaggio tra magistratura e politica).</li>
+                    <li>Limitato la possibilità per i magistrati di ricoprire ruoli di vertice se troppo legati a logiche di corrente. </li>
+                </ul>
+            </div>
+        </div>
+        
+    </section>
+
+        <!-- Sezione 4: Separazione dei Poteri -->
+    <section id="poteri">
+        <h2>🔍 4. Separazione dei Poteri</h2>
+        <p>
+            Il principio, teorizzato da Montesquieu ne "Lo spirito delle leggi" (1748), nasce per evitare la tirannia: se chi fa le leggi è lo stesso che le applica e giudica i trasgressori, non c'è libertà.
+            Nella Costituzione Italiana, questo principio non è enunciato in un unico articolo, ma si ricava dall'intera struttura della Parte II (Ordinamento della Repubblica). La sovranità, che appartiene al popolo, viene distribuita tra organi diversi che si controllano a vicenda tramite un sistema di pesi e contrappesi (checks and balances).
+        </p>
+        <table style="width:100%; border-collapse: collapse; margin-top:20px;">
+            <tr style="background:#2c3e50; color:white;">
+                <th style="padding:12px;">Potere</th>
+                <th style="padding:12px;">Organo Costituzionale</th>
+                <th style="padding:12px;">Funzione</th>
+                <th style="padding:12px;">Rapporti di Controllo (Pesi e Contrappesi) </th>
+            </tr>
+            <tr>
+                <td style="padding:12px; border-bottom:1px solid #ddd;">Legislativo</td>
+                <td style="padding:12px; border-bottom:1px solid #ddd;">Parlamento (Camera e Senato)</td>
+                <td style="padding:12px; border-bottom:1px solid #ddd;">Produzione di norme giuridiche generali e astratte.</td>
+                <td style="padding:12px; border-bottom:1px solid #ddd;">Concede o revoca la fiducia al Governo; può mettere in stato di accusa il PdR.</td>
+            </tr>
+            <tr style="background:#f9f9f9;">
+                <td style="padding:12px; border-bottom:1px solid #ddd;">Esecutivo</td>
+                <td style="padding:12px; border-bottom:1px solid #ddd;">Governo (Consiglio dei Ministri)</td>
+                <td style="padding:12px; border-bottom:1px solid #ddd;">Gestione della cosa pubblica e attuazione concreta delle leggi.</td>
+                <td style="padding:12px; border-bottom:1px solid #ddd;">Può emanare atti con forza di legge (Decreti Legge e Legislativi) sotto controllo parlamentare.</td>
+            </tr>
+            <tr>
+                <td style="padding:12px; border-bottom:1px solid #ddd;">Giudiziario</td>
+                <td style="padding:12px; border-bottom:1px solid #ddd;">Magistratura (Giudici e PM) </td>
+                <td style="padding:12px; border-bottom:1px solid #ddd;">Risoluzione delle controversie e applicazione delle sanzioni.</td>
+                <td style="padding:12px; border-bottom:1px solid #ddd;">Verifica la legalità degli atti; è soggetta soltanto alla legge per garantirne l'imparzialità.</td>
+            </tr>
+        </table>
+
+        <div class="image-title-box">
+            <img src="https://www.laleggepertutti.it/wp-content/uploads/2022/05/indagini-polizia-e1652257588903.jpg">
+            <h3>🔎 Focus sulla Magistratura: La distinzione delle funzioni</h3>
+        </div>
+        <p>
+            All'interno del potere giudiziario esiste una distinzione cruciale tra chi accusa e chi giudica:
+        </p>
+        <ul>
+            <li><strong>Magistratura Requirente (P.M.):</strong> Agisce presso le Procure. Il Pubblico Ministero ha l'obbligo di esercitare l'azione penale (Art. 112 Cost.) e rappresenta l'interesse dello Stato nella repressione dei reati.</li>
+            <li><strong>Magistratura Giudicante (Giudici):</strong> Opera nei Tribunali e nelle Corti. Il Giudice è terzo e imparziale; deve decidere sulla base delle prove portate dall'accusa (PM) e dalla difesa.</li>
+        </ul>
+        <p>
+            <strong>Il dibattito sulla separazione delle carriere:</strong> oggi in Italia un magistrato può passare (con alcuni limiti) dal ruolo di PM a quello di Giudice perché appartengono alla stessa carriera e allo stesso organo (CSM).  
+            La riforma del 2025 (approvazione) mira a separare nettamente queste due strade sin dal concorso, istituendo due CSM distinti (uno per i giudici e uno per i PM) per garantire che il giudice sia percepito come assolutamente "distante" dalla parte che accusa.
+        </p>
+
+        <div class="image-title-box">
+            <img src="https://www.ilquotidianoinclasse.it/wp-content/uploads/2026/03/1000003027.jpg">
+            <h3>🔎 Gli Organi di Garanzia (I "custodi" della separazione)</h3>
+        </div>
+        <p>
+            Per evitare che i tre poteri entrino in conflitto o che uno prevalga sugli altri, la Costituzione prevede due figure neutrali:
+        </p>
+        <ul>
+            <li><strong>Presidente della Repubblica:</strong> Non detiene nessuno dei tre poteri, ma assicura il loro corretto funzionamento. Ad esempio, può rinviare una legge al Parlamento o sciogliere le Camere.</li>
+            <li><strong>Corte Costituzionale:</strong> Giudica se le leggi fatte dal Parlamento rispettano la Costituzione e risolve i conflitti di attribuzione tra i poteri dello Stato.</li>
+        </ul>
+    </section>
+
+        <!-- Sezione 5: Riforma Giustizia -->
+    <section id="riforma">
+        <h2>🗳️ 5. La Riforma Nordio (Referendum 22-23 marzo 2026)</h2>
+
+        <p>
+            📍 Referendum costituzionale confermativo sulla giustizia – domenica 22 e lunedì 23 marzo 2026.
+            Il referendum costituzionale riguarda la riforma dell'ordinamento giudiziario, nota come "Riforma Nordio". Si tratta di un appuntamento cruciale per l'assetto della magistratura italiana.
+        </p>
+
+        <p>
+            Questo voto non è un referendum abrogativo, ma confermativo: significa che gli elettori sono chiamati a decidere se approvare una legge di modifica costituzionale già approvata dal Parlamento. Al contrario del referendum abrogativo, non è previsto il quorum di partecipazione: è sufficiente la maggioranza dei votanti favorevoli.
+        </p>
+
+        <div class="image-title-box">
+            <img src="https://i2.res.24o.it/images2010/S24/Documenti/2026/03/26/Immagini/Ritagli/092f2ca88b3b208a940d03e6b475f73c-U82572218551SBH-1440x752@IlSole24Ore-Web.jpg?r=650x341">
+            <h3>🔎 Cosa prevede la riforma</h3>
+        </div>
+        <p>
+            La legge costituzionale sottoposta a referendum è stata pubblicata in Gazzetta Ufficiale n. 253 del 30 ottobre 2025 ed è comunemente nota come “riforma Nordio” dal nome del Ministro della Giustizia che l’ha promossa. Essa introduce modifiche profonde all’ordinamento giudiziario italiano, modificando profondamente il rapporto tra giudici e pubblici ministeri, e in particolare: 
+        </p>
+        <div class="grid-horizontal">
+            <div class="card">
+                <strong>1️⃣ Separazione delle carriere:</strong>
+                Attualmente in Italia i magistrati entrano nell’ordine giudiziario con un unico percorso formativo (appartengono allo stesso ordine) e possono scegliere, entro certi limiti, di fare il giudice (carriera giudicante) o il Pubblico Ministero (PM) (carriera requirente), e in alcuni casi cambiare ruolo nel corso della carriera (pur con i limiti introdotti dalla legge Cartabia).
+                La riforma introduce una separazione costituzionale dei percorsi professionali:
+                <ul>
+                    <li>Ogni magistrato deve scegliere fin dall’inizio se intraprendere la carriera da giudice o da PM. Vengono creati due concorsi distinti e due percorsi professionali che non si incrociano mai.</li>
+                    <li>Il principio del "Giudice Terzo": L'obiettivo è attuare pienamente l'Art. 111 della Costituzione (Giusto Processo). L'idea è che se il giudice e il PM sono colleghi d'ufficio, il giudice potrebbe essere inconsciamente condizionato dall'accusa. Con la separazione, il giudice diventa una figura equidistante tra accusa e difesa.</li>
+                    <li>Non è più possibile passare da una funzione all’altra (se non in casi eccezionali e con vincoli strettissimi).</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <strong>2️⃣ Modifiche al CSM:</strong>
+                La legge prevede di sdoppiare il Consiglio Superiore della Magistratura (CSM), oggi unico organo di autogoverno per tutti i magistrati, in due distinti organi.
+                <ul>
+                    <li>Due Consigli: Nasceranno il CSM della magistratura giudicante e il CSM della magistratura requirente.</li>
+                    <li>Composizione: Entrambi resteranno presieduti dal Presidente della Repubblica. Manterranno la proporzione tra membri "togati" (magistrati) e "laici" (professori o avvocati eletti dal Parlamento), ma opereranno in totale autonomia l'uno dall'altro.</li>
+                    <li>Ratio: Evitare che i PM possano decidere sulla carriera dei giudici e viceversa, eliminando ogni possibile conflitto di interessi o spirito di corporazione tra le due funzioni.</li>
+                </ul>
+                Questo significa che ciascun gruppo gestisce solo la propria carriera, la promozione, i trasferimenti e altre decisioni.
+            </div>
+
+            <div class="card">
+                <strong>3️⃣ Cambiamenti disciplinari:</strong>
+                Oggi, se un magistrato commette un errore o un illecito professionale, viene giudicato dalla Sezione Disciplinare del CSM (composta dagli stessi colleghi).
+                <ul>
+                    <li>Il nuovo organo: Viene istituita un'Alta Corte Disciplinare composta da 15 membri (3 nominati dal Capo dello Stato, 3 dal Parlamento, 6 magistrati giudicanti e 3 requirenti estratti a sorte).</li>
+                    <li>Competenza: Avrà la giurisdizione esclusiva sugli illeciti disciplinari di tutti i magistrati (ordinari, amministrativi, contabili e militari).</li>
+                    <li>Perché è importante: Serve a separare la gestione amministrativa (carriere/trasferimenti) da quella punitiva. Si vuole evitare il "correntismo disciplinare", ovvero il rischio che il CSM sia troppo indulgente con i propri membri o usato come arma politica contro i dissidenti.</li>
+                </ul>
+                Questo nuovo organo disciplinare è pensato per essere più indipendente rispetto agli attuali meccanismi interni del CSM. 
+            </div>
+
+            <div class="card">
+                <strong>4️⃣ Modalità di elezione del CSM:</strong>
+                Questo è il punto più divisivo della riforma, mirato a scardinare il potere delle "correnti" (associazioni interne alla magistratura che spesso influenzano le nomine).
+                <ul>
+                    <li>Come funziona: I membri togati dei due CSM non saranno più eletti tramite campagne elettorali interne, ma estratti a sorte tramite un sistema parziale (sorteggio).</li>
+                    <li>Meccanismo del Sorteggio: La legge prevede un'estrazione tra i magistrati che hanno i requisiti di eleggibilità.</li>
+                    <li>Obiettivo: Restituire indipendenza al singolo magistrato. Se il tuo avanzamento di carriera non dipende più dal "peso" della tua corrente nel CSM, sarai libero da vincoli politici o associativi. Ridurre l’influenza delle correnti interne.</li>
+                    <li>Critica: Molti costituzionalisti ritengono che il sorteggio svilisca la natura democratica dell'organo, affidando al caso la guida della magistratura.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="image-title-box">
+            <img src="https://ancona-api.municipiumapp.it/s3/223/media/facsimile-scheda-referendum-2026_quesito.png">
+            <h3>🔎 Cosa chiede il quesito referendario</h3>
+        </div>
+
+        <p>
+            Questo è il testo ufficiale che comparirà sulla scheda elettorale:
+        </p>
+
+        <p style="background:#f4f6f8; padding:15px; border-radius:8px;">
+            “Approvate il testo della legge di revisione degli articoli 87, decimo comma,
+            102, primo comma, 104, 105, 106, terzo comma, 107, primo comma, e 110
+            della Costituzione approvata dal Parlamento e pubblicata nella Gazzetta
+            Ufficiale del 30 ottobre 2025 con il titolo
+            ‘Norme in materia di ordinamento giurisdizionale e di istituzione della Corte disciplinare’?”
+        </p>
+
+        <p>
+            📌  Questo testo elenca in modo preciso gli articoli costituzionali che verrebbero modificati se la riforma venisse confermata dal voto popolare.
+        </p>
+
+        <div class="image-title-box">
+            <img src="https://www.italpress.com/wp-content/uploads/2019/11/costituzione1.jpg">
+            <h3>🗳️ Tipo di referendum</h3>
+        </div>
+        <p>È un referendum costituzionale confermativo ai sensi dell’articolo 138 della Costituzione perché:</p>
+        <ul>
+            <li>la legge costituzionale è stata approvata dal Parlamento, ma senza la maggioranza qualificata dei due terzi; </li>
+            <li>perciò deve essere sottoposta al voto popolare prima di entrare in vigore.</li>
+            <li>Non è previsto quorum di partecipazione.</li>
+            <li>Vince la maggioranza dei voti validi.</li>
+        </ul>
+        <p>In questo tipo di referendum non c’è quorum di partecipazione: vince chi ottiene la maggioranza dei voti validi indipendentemente dall’affluenza.</p>
+
+        <div class="image-title-box">
+            <img src="https://www.eventi-fiere.it/blog/wp-content/uploads/sites/3/2018/11/che-cosa-%C3%A8-dibattito-min.jpg">
+            <h3>🔎 Argomentazioni nel dibattito pubblico</h3>
+        </div>
+
+        <div class="grid">
+            <div style="background:#e8f5e9; padding:15px; border-radius:8px;">
+                <strong>✔ ARGOMENTAZIONI FAVOREVOLI</strong>
+                <h3>🧠 Maggiore imparzialità della giustizia</h3>
+                <p>Chi sostiene la riforma punta su un modello di giustizia "all'anglosassone", dove l'accento è posto sull'equità del processo e sulla trasparenza delle istituzioni.</p>
+                <ul>
+                    <li>La Terzietà del Giudice (Art. 111 Cost.): il sostenitore del SÌ afferma che oggi esiste una "vicinanza psicologica" eccessiva tra chi accusa (PM) e chi giudica. Spesso condividono uffici, mense e percorsi associativi. Separandoli, il cittadino avrebbe la garanzia di un giudice che guarda al PM e all'Avvocato difensore con la stessa identica distanza.</li>
+                    <li>Meritocrazia contro Correntismo: l'estrazione a sorte per il CSM è vista come l'unica "terapia d'urto" possibile dopo lo scandalo Palamara. L'idea è che, se il sorteggio decide chi va al CSM, i magistrati smetteranno di fare "politica associativa" per ottenere incarichi, tornando a concentrarsi solo sulle sentenze. </li>
+                    <li>L'efficacia della Sanzione: oggi il CSM è spesso accusato di essere un "giudice domestico" troppo indulgente con i colleghi. Un'Alta Corte Disciplinare con membri esterni (nominati dal Capo dello Stato e dal Parlamento) garantirebbe che chi sbaglia paghi davvero, aumentando la fiducia dei cittadini nella giustizia. </li>
+                    <li>Specializzazione: un PM che fa solo il PM per tutta la vita diventa un professionista dell'investigazione più esperto e tecnico.</li>
+                </ul>
+                <p>Questo secondo alcuni può portare a una maggiore fiducia dei cittadini nella giustizia.</p>
+            </div>
+
+            <div style="background:#ffebee; padding:15px; border-radius:8px;">
+                <strong>❌ ARGOMENTAZIONI CONTRARIE</strong>
+                <h3>⚠️ Rischio di indebolimento del Pubblico Ministero </h3>
+                <p>Chi si oppone (in primis l'Associazione Nazionale Magistrati e molti costituzionalisti) teme che la riforma rompa un equilibrio delicatissimo che ha garantito l'indipendenza della magistratura dal dopoguerra a oggi.</p>
+                <ul>
+                    <li>Il rischio della "Soggezione all'Esecutivo": È l'argomento più forte. Se il PM viene isolato dal corpo dei giudici, perde quella "cultura della giurisdizione" (ovvero l'abitudine a cercare la verità, non solo la condanna). Il timore è che, a lungo termine, un PM separato finisca inevitabilmente sotto il controllo del Ministero della Giustizia o del Governo, come accade in Francia o negli USA.</li>
+                    <li>L'attacco all'indipendenza (Sorteggio): Per i contrari, il sorteggio è incostituzionale perché degrada una funzione di alta amministrazione a una "lotteria". Si sostiene che per governare la magistratura servano i migliori, eletti per capacità, non persone scelte a caso dal computer.</li>
+                    <li>Indebolimento della lotta alla criminalità: Se il PM diventa un "super-poliziotto" distaccato dalla magistratura ordinaria, potrebbe perdere quelle garanzie di autonomia che gli permettono oggi di indagare anche i potenti e i politici senza timore di ritorsioni sulla carriera.</li>
+                    <li>L'Alta Corte come "clava politica": Il rischio ravvisato è che un organo disciplinare composto da membri di nomina politica possa essere usato per punire i magistrati "scomodi" che conducono inchieste delicate.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 - Guida al Referendum 2026 - Serafino Gabriella 5AI</p>
+    </footer>
+</div>
+
+</body>
+</html>
